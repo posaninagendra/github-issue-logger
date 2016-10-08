@@ -25,33 +25,33 @@
                                     <constraint firstAttribute="height" constant="100" id="7Mk-4m-Vug"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="/Username/RepoName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eew-3I-w33">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eew-3I-w33">
                                 <rect key="frame" x="20" y="187" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="X30-Dp-xMC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter &quot;username/reponame&quot; below." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp2-0g-jei">
-                                <rect key="frame" x="20" y="150" width="335" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJm-dm-nF0">
                                 <rect key="frame" x="104" y="251" width="167.5" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Sgb-sB-KXX"/>
                                 </constraints>
-                                <state key="normal" title="Issues">
+                                <state key="normal" title="Get Repositories">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="issueButtonClick:" destination="eXv-dK-kKM" eventType="touchUpInside" id="OlL-RH-sVG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter GitHub username below." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp2-0g-jei">
+                                <rect key="frame" x="20" y="150" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -78,6 +78,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nN-K6-9Fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="185.5" y="403.5"/>
+        </scene>
+        <!--List Controller-->
+        <scene sceneID="uR5-ZP-lDV">
+            <objects>
+                <viewController id="eUe-Ro-BcN" customClass="ListController" customModule="GitHub_Repo_Issue_Logger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rUO-8s-Yt0"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYC-ed-8OB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ChQ-zN-oX6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ByW-i2-Qbo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DYC-ed-8OB" firstAttribute="top" secondItem="ByW-i2-Qbo" secondAttribute="bottom" id="CdR-2a-T22"/>
+                            <constraint firstAttribute="trailing" secondItem="ByW-i2-Qbo" secondAttribute="trailing" id="Et4-Bd-VyC"/>
+                            <constraint firstItem="ByW-i2-Qbo" firstAttribute="top" secondItem="rUO-8s-Yt0" secondAttribute="bottom" id="qwY-qQ-hSE"/>
+                            <constraint firstItem="ByW-i2-Qbo" firstAttribute="leading" secondItem="ChQ-zN-oX6" secondAttribute="leading" id="xjA-5v-SY7"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="listTableView" destination="ByW-i2-Qbo" id="KiB-xR-cNP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xln-zO-f7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611.5" y="347.5"/>
         </scene>
     </scenes>
     <resources>
