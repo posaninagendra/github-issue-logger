@@ -14,6 +14,11 @@
 		78B4E3091DA9814C000487F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B4E3071DA9814C000487F4 /* LaunchScreen.storyboard */; };
 		78B4E3141DA9814C000487F4 /* GitHub_Repo_Issue_LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E3131DA9814C000487F4 /* GitHub_Repo_Issue_LoggerTests.swift */; };
 		78B4E31F1DA9814C000487F4 /* GitHub_Repo_Issue_LoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E31E1DA9814C000487F4 /* GitHub_Repo_Issue_LoggerUITests.swift */; };
+		78B4E32D1DA98C48000487F4 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E32C1DA98C48000487F4 /* HomeController.swift */; };
+		78B4E32F1DA98FD9000487F4 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E32E1DA98FD9000487F4 /* StoryboardManager.swift */; };
+		78B4E3311DA99044000487F4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E3301DA99044000487F4 /* AppConstants.swift */; };
+		78B4E3331DA99288000487F4 /* ResignOnClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E3321DA99288000487F4 /* ResignOnClick.swift */; };
+		78B4E3351DA993CB000487F4 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E3341DA993CB000487F4 /* ViewControllerExtension.swift */; };
 		AAE268CBE80800F86DB269D3 /* Pods_GitHub_Repo_Issue_Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA17274FB42D0DD0BA638DC4 /* Pods_GitHub_Repo_Issue_Logger.framework */; };
 		B85F000320D545FB5D0D4F51 /* Pods_GitHub_Repo_Issue_LoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5BC661A309FC748E1CD8B9 /* Pods_GitHub_Repo_Issue_LoggerTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,11 @@
 		78B4E31A1DA9814C000487F4 /* GitHub-Repo-Issue-LoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GitHub-Repo-Issue-LoggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B4E31E1DA9814C000487F4 /* GitHub_Repo_Issue_LoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub_Repo_Issue_LoggerUITests.swift; sourceTree = "<group>"; };
 		78B4E3201DA9814C000487F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78B4E32C1DA98C48000487F4 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		78B4E32E1DA98FD9000487F4 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
+		78B4E3301DA99044000487F4 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		78B4E3321DA99288000487F4 /* ResignOnClick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResignOnClick.swift; sourceTree = "<group>"; };
+		78B4E3341DA993CB000487F4 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		B19DB98BC4DEFBC7F3313AF1 /* Pods-GitHub-Repo-Issue-Logger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Repo-Issue-Logger.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Repo-Issue-Logger/Pods-GitHub-Repo-Issue-Logger.release.xcconfig"; sourceTree = "<group>"; };
 		C312E04C2E9A5D843A1A7C58 /* Pods-GitHub-Repo-Issue-LoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Repo-Issue-LoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Repo-Issue-LoggerTests/Pods-GitHub-Repo-Issue-LoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA17274FB42D0DD0BA638DC4 /* Pods_GitHub_Repo_Issue_Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Repo_Issue_Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,10 +145,11 @@
 		78B4E2FD1DA9814C000487F4 /* GitHub-Repo-Issue-Logger */ = {
 			isa = PBXGroup;
 			children = (
-				78B4E2FE1DA9814C000487F4 /* AppDelegate.swift */,
-				78B4E3021DA9814C000487F4 /* Main.storyboard */,
+				78B4E3391DA9968A000487F4 /* Helpers */,
+				78B4E3381DA9967F000487F4 /* View Controllers */,
+				78B4E3371DA9966A000487F4 /* Storyboards */,
+				78B4E3361DA9965F000487F4 /* App Delegate */,
 				78B4E3051DA9814C000487F4 /* Assets.xcassets */,
-				78B4E3071DA9814C000487F4 /* LaunchScreen.storyboard */,
 				78B4E30A1DA9814C000487F4 /* Info.plist */,
 			);
 			path = "GitHub-Repo-Issue-Logger";
@@ -160,6 +171,66 @@
 				78B4E3201DA9814C000487F4 /* Info.plist */,
 			);
 			path = "GitHub-Repo-Issue-LoggerUITests";
+			sourceTree = "<group>";
+		};
+		78B4E3361DA9965F000487F4 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E2FE1DA9814C000487F4 /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		78B4E3371DA9966A000487F4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E3021DA9814C000487F4 /* Main.storyboard */,
+				78B4E3071DA9814C000487F4 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		78B4E3381DA9967F000487F4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E32C1DA98C48000487F4 /* HomeController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		78B4E3391DA9968A000487F4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E33C1DA996B8000487F4 /* Constants */,
+				78B4E33A1DA996A9000487F4 /* Protocols */,
+				78B4E33B1DA996B0000487F4 /* Extensions */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		78B4E33A1DA996A9000487F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E3321DA99288000487F4 /* ResignOnClick.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		78B4E33B1DA996B0000487F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E3341DA993CB000487F4 /* ViewControllerExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		78B4E33C1DA996B8000487F4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				78B4E3301DA99044000487F4 /* AppConstants.swift */,
+				78B4E32E1DA98FD9000487F4 /* StoryboardManager.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,7 +495,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B4E32D1DA98C48000487F4 /* HomeController.swift in Sources */,
+				78B4E3331DA99288000487F4 /* ResignOnClick.swift in Sources */,
+				78B4E3351DA993CB000487F4 /* ViewControllerExtension.swift in Sources */,
 				78B4E2FF1DA9814C000487F4 /* AppDelegate.swift in Sources */,
+				78B4E32F1DA98FD9000487F4 /* StoryboardManager.swift in Sources */,
+				78B4E3311DA99044000487F4 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

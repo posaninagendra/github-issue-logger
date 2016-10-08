@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Set Navigation Default Appearance
+        self.navigationBarSetup()
+        // Set Home Screen
+        let homeController =  StoryboardManager.Home.instantiateViewControllerWithIdentifier(AppConstants.Home.controller)
+        let navBar = UINavigationController(rootViewController: homeController)
+        self.window?.rootViewController = navBar
         return true
     }
 
@@ -41,6 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func navigationBarSetup() {
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(18)]
+        UINavigationBar.appearance().translucent = false
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
 
 }
 
