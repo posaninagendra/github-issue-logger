@@ -1,0 +1,26 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'GitHub-Repo-Issue-Logger' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  # Network Library
+  pod ‘Alamofire’, ‘~> 3.0’
+  pod ‘RealmSwift’, ‘~> 0.96’
+  pod ‘ObjectMapper’, ‘~> 1.0’
+
+  # Loader
+  pod ‘SVProgressHUD’, ‘~> 2.0-beta’
+  # Pods for GitHub-Repo-Issue-Logger
+
+  target 'GitHub-Repo-Issue-LoggerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'GitHub-Repo-Issue-LoggerUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
