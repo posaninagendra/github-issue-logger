@@ -14,6 +14,8 @@ class HomeController: UIViewController, ResginOnClick {
     // UI Outlets
     @IBOutlet weak var urlField: UITextField!
     
+    @IBOutlet weak var getRepoBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = AppConstants.Home.name
@@ -27,8 +29,19 @@ class HomeController: UIViewController, ResginOnClick {
     
 
     @IBAction func issueButtonClick(sender: AnyObject) {
-        
+        let cont = StoryboardManager.Home.instantiateViewControllerWithIdentifier(AppConstants.List.controller) as! ListController
+        cont.isRepoList = true
+        cont.apiKey = self.urlField.text
+        cont.title = self.urlField.text
+        self.navigationController?.pushViewController(cont, animated: true)
     }
-    
+}
 
+
+extension HomeController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        self.getRepoBtn.sendActionsForControlEvents(.TouchUpInside)
+        return true
+    }
 }

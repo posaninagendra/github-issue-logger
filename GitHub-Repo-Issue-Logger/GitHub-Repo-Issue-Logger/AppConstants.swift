@@ -7,12 +7,20 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct AppConstants {
     
     struct Home {
         static let controller: String = "HomeController"
         static let name: String = "Issue Logger"
+    }
+    
+    struct List {
+        static let controller: String = "ListController"
+        static let repoList: String = "RepoListCell"
+        static let issueList: String = "IssueListCell"
+        static let repoCellHeight: CGFloat = 90.0
+        static let issueCellHeight: CGFloat = 63.0
     }
 }

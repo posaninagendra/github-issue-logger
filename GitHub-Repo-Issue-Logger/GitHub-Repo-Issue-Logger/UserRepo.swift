@@ -18,9 +18,9 @@ class UserRepo: Mappable{
     var privateRepo: Bool?
     var createdAt: String?
     var forksCount: Int?
-    var openIssuesCount: String?
+    var openIssuesCount: Int?
     var message : String?
-    
+    var fork: Bool?
     required convenience init?(_ map: Map) {
         self.init()
     }
@@ -37,6 +37,6 @@ class UserRepo: Mappable{
         createdAt <- map["created_at"]
         forksCount <- map["forks_count"]
         openIssuesCount <- map["open_issues_count"]
-        
+        fork <- map["fork"]
     }
 }

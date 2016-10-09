@@ -25,14 +25,6 @@
                                     <constraint firstAttribute="height" constant="100" id="7Mk-4m-Vug"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eew-3I-w33">
-                                <rect key="frame" x="20" y="187" width="335" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="X30-Dp-xMC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJm-dm-nF0">
                                 <rect key="frame" x="104" y="251" width="167.5" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,6 +44,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eew-3I-w33">
+                                <rect key="frame" x="20" y="187" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="X30-Dp-xMC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eXv-dK-kKM" id="SXk-Ci-d66"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -72,6 +75,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="getRepoBtn" destination="sJm-dm-nF0" id="oLu-5I-Idz"/>
                         <outlet property="urlField" destination="eew-3I-w33" id="dVj-wo-J5F"/>
                     </connections>
                 </viewController>
@@ -82,7 +86,7 @@
         <!--List Controller-->
         <scene sceneID="uR5-ZP-lDV">
             <objects>
-                <viewController id="eUe-Ro-BcN" customClass="ListController" customModule="GitHub_Repo_Issue_Logger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListController" id="eUe-Ro-BcN" customClass="ListController" customModule="GitHub_Repo_Issue_Logger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rUO-8s-Yt0"/>
                         <viewControllerLayoutGuide type="bottom" id="DYC-ed-8OB"/>
@@ -95,17 +99,47 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fND-sh-KQE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="VEo-AQ-Wnq">
+                                        <rect key="frame" x="67" y="175" width="240" height="197"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="197" id="R8j-lm-HEJ"/>
+                                            <constraint firstAttribute="width" constant="240" id="vwx-dW-1BQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Open Issues for this repository." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8X-UW-wGO">
+                                        <rect key="frame" x="56" y="401" width="263.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="VEo-AQ-Wnq" firstAttribute="centerY" secondItem="fND-sh-KQE" secondAttribute="centerY" constant="-50" id="fxW-3W-E7Q"/>
+                                    <constraint firstItem="u8X-UW-wGO" firstAttribute="top" secondItem="VEo-AQ-Wnq" secondAttribute="bottom" constant="29" id="gl0-ZS-gKy"/>
+                                    <constraint firstItem="u8X-UW-wGO" firstAttribute="centerX" secondItem="fND-sh-KQE" secondAttribute="centerX" id="liL-bC-Ohb"/>
+                                    <constraint firstItem="VEo-AQ-Wnq" firstAttribute="centerX" secondItem="fND-sh-KQE" secondAttribute="centerX" id="mT1-Nw-qOe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DYC-ed-8OB" firstAttribute="top" secondItem="fND-sh-KQE" secondAttribute="bottom" id="7WA-eE-gRD"/>
+                            <constraint firstItem="fND-sh-KQE" firstAttribute="leading" secondItem="ChQ-zN-oX6" secondAttribute="leading" id="Bxu-tB-yJc"/>
                             <constraint firstItem="DYC-ed-8OB" firstAttribute="top" secondItem="ByW-i2-Qbo" secondAttribute="bottom" id="CdR-2a-T22"/>
                             <constraint firstAttribute="trailing" secondItem="ByW-i2-Qbo" secondAttribute="trailing" id="Et4-Bd-VyC"/>
+                            <constraint firstAttribute="trailing" secondItem="fND-sh-KQE" secondAttribute="trailing" id="O2O-gC-fWf"/>
+                            <constraint firstItem="fND-sh-KQE" firstAttribute="top" secondItem="rUO-8s-Yt0" secondAttribute="bottom" id="OQh-mc-ekW"/>
                             <constraint firstItem="ByW-i2-Qbo" firstAttribute="top" secondItem="rUO-8s-Yt0" secondAttribute="bottom" id="qwY-qQ-hSE"/>
                             <constraint firstItem="ByW-i2-Qbo" firstAttribute="leading" secondItem="ChQ-zN-oX6" secondAttribute="leading" id="xjA-5v-SY7"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="errorView" destination="fND-sh-KQE" id="z7m-VH-LwV"/>
                         <outlet property="listTableView" destination="ByW-i2-Qbo" id="KiB-xR-cNP"/>
                     </connections>
                 </viewController>
@@ -115,6 +149,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cat" width="400" height="332"/>
         <image name="Git" width="500" height="205"/>
     </resources>
 </document>

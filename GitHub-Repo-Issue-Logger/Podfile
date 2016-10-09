@@ -8,7 +8,7 @@ target 'GitHub-Repo-Issue-Logger' do
   pod ‘Alamofire’, ‘~> 3.0’
   pod ‘RealmSwift’, ‘~> 0.96’
   pod ‘ObjectMapper’, ‘~> 1.0’
-  pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'JLToast'
   
   # Loader
   pod ‘SVProgressHUD’, ‘~> 2.0-beta’
