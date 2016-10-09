@@ -9,11 +9,16 @@
 import UIKit
 import SVProgressHUD
 
+let screenWidthOffset = UIScreen.mainScreen().bounds.size.width - 20
+let labelOffset: CGFloat = 40.0
 
 class ListController: UIViewController {
 
+    // IB Outlets
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var listTableView: UITableView!
+    
+    // Class Variables
     var isRepoList: Bool?
     var apiKey: String?
     var repoList:[UserRepo] = []
@@ -25,6 +30,7 @@ class ListController: UIViewController {
         self.errorView.hidden = true
         Helper.addBackButton(self, action: #selector(ListController.popToRoot))
         self.setUpTableView()
+        // If the controller is to list repositories call API else if there are non zero open issues then API call for the issues.
         if self.isRepoList == true {
             SVProgressHUD.show()
             self.getRepoData()
@@ -107,7 +113,7 @@ extension ListController : UITableViewDelegate{
             return AppConstants.List.repoCellHeight
         }
         
-        return Helper.heightForText(self.issueList[indexPath.row].name!, font: UIFont.systemFontOfSize(17), width: 300) + 40
+        return Helper.heightForText(self.issueList[indexPath.row].name!, font: UIFont.systemFontOfSize(17), width: screenWidthOffset) + labelOffset
     }
 }
 
@@ -125,7 +131,7 @@ extension ListController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCellWithIdentifier(AppConstants.List.repoList, forIndexPath: indexPath) as! RepoListCell
             cell.accessoryType = .DisclosureIndicator
             cell.selectionStyle = .None
-            cell.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1.0)
+            cell.backgroundColor = UIColor.getGrayBackground()
             cell.configureCell(self.repoList[indexPath.row])
             return cell
         }else{

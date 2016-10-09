@@ -17,14 +17,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ER-Dm-MlK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="62.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qei-uD-v6m">
-                                <rect key="frame" x="8" y="37" width="304" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qei-uD-v6m">
+                                <rect key="frame" x="12" y="35.5" width="300" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3u-rA-hHc">
-                                <rect key="frame" x="8" y="8" width="304" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3u-rA-hHc">
+                                <rect key="frame" x="12" y="8" width="300" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.25098039220000001" green="0.47058823529999999" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="P3u-rA-hHc" secondAttribute="trailing" constant="8" id="0r1-h4-tnn"/>
                             <constraint firstItem="qei-uD-v6m" firstAttribute="leading" secondItem="P3u-rA-hHc" secondAttribute="leading" id="1LU-yQ-Bdv"/>
-                            <constraint firstItem="P3u-rA-hHc" firstAttribute="leading" secondItem="3ER-Dm-MlK" secondAttribute="leading" constant="8" id="DEB-dX-qiJ"/>
+                            <constraint firstItem="P3u-rA-hHc" firstAttribute="leading" secondItem="3ER-Dm-MlK" secondAttribute="leading" constant="12" id="DEB-dX-qiJ"/>
                             <constraint firstItem="qei-uD-v6m" firstAttribute="trailing" secondItem="P3u-rA-hHc" secondAttribute="trailing" id="jT2-h1-rfl"/>
                             <constraint firstAttribute="bottom" secondItem="qei-uD-v6m" secondAttribute="bottom" constant="8" id="qfq-ZN-3Cb"/>
                             <constraint firstItem="qei-uD-v6m" firstAttribute="top" secondItem="P3u-rA-hHc" secondAttribute="bottom" constant="8" id="uOd-aQ-vQN"/>
