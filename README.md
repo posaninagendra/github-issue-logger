@@ -1,5 +1,5 @@
 # GitHub-Repo-Issue-Logger-iOS
-An iOS application for iPhone users which will list the issues of a given users public repository. 
+An iOS application for iPhone users which will list the user repositories and its open issues of a given user's public repository. 
 
 ## To run the application please follow the steps given below.
   * Download the code from the GitHub.
